@@ -38,9 +38,10 @@ email: string;
   register(email: string, password: string){
       return new Promise((resolve, reject) => {
          this.fireAuth.auth.createUserAndRetrieveDataWithEmailAndPassword(email, password).then((userCredentials) =>{
+             console.log(userCredentials);
              this.uid = userCredentials.user.uid;
              this.email = userCredentials.user.email;
-             //this.fireAuth.auth.signOut();
+             this.fireAuth.auth.signOut();
          }); 
       });
   }
