@@ -27,7 +27,9 @@ export class RegisterComponent implements OnInit {
     });
     this.AdditionalInfo = this._formBuilder.group({
       firstname: ['', Validators.required],
-      lastname: ['', Validators.required]
+      lastname: ['', Validators.required],
+      dob: ['', Validators.required],
+      address: ['', Validators.required]
     });
   }
       
@@ -39,15 +41,17 @@ export class RegisterComponent implements OnInit {
           this.authService.register(email, password);
       }
   }
-  // assignInfo(){
-  // 
-  //     let firstname = this.AdditionalInfo.controls.firstname.value;
-  //     let lastname = this.AdditionalInfo.controls.lastname.value;
-  //     if(firstname !== "" && lastname !== ""){
-  //         this.fbAuth.assignInfo(firstname, lastname).then(() => {
-  //             this.router.navigate([ '/home' ]);
-  //         });
-  //     }
-  // }
+  assignInfo(){
+  
+      let firstname = this.AdditionalInfo.controls.firstname.value;
+      let lastname = this.AdditionalInfo.controls.lastname.value;
+      let address = this.AdditionalInfo.controls.address.value;
+      let dob = this.AdditionalInfo.controls.dob.value;
+      if(firstname !== "" && lastname !== ""){
+          this.authService.assignInfo(firstname, lastname, address, dob).then(() => {
+              this.router.navigate([ '/home' ]);
+          });
+      }
+  }
   
 }

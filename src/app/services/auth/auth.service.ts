@@ -7,6 +7,8 @@ export interface User {
     email: string;
     firstname: string;
     lastname: string;
+    address: string;
+    dob: string;
 }
 
 @Injectable({
@@ -17,6 +19,7 @@ export class AuthService {
 user: any;
 authState;
 uid: any;
+registering: any;
 email: string;
   constructor(private fireAuth: AngularFireAuth, private fireStore: AngularFirestore) 
   {
@@ -45,8 +48,25 @@ email: string;
          }); 
       });
   }
-  additionalInfo(){
-      
+  assignInfo(firstname: string, lastname: string, address: string, dob: string)
+  {
+      this.registering = false;
+      return new Promise((resolve, reject) =>{
+          // Set Local User Object
+          let user = {} as User;
+          user.email = this.email;
+          user.firstname = firstname;
+          user.lastname = lastname;
+          user.address = address;
+          user.dob = dob;
+          this.user = user;
+          
+          console.log(this.uid);            
+          //Publish to firebase
+          let users = this.fireStore.collection<User>('users');
+          users.doc(this.uid).set(user);
+          resolve();
+      });
   }
   logout()
   {
