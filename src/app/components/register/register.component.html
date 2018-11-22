@@ -1,3 +1,9 @@
-<p>
-  register works!
-</p>
+<div class="">
+    <mat-form-field>
+      <input matInput placeholder="Email Address" type="email" name="email" [(ngModel)]="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="password">
+    </mat-form-field>
+    <button mat-button mat-rasied-button color="primary" (click)="register()">Login</button>
+</div>
