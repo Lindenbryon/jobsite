@@ -1,0 +1,9 @@
+<form class="example-form" fxLayout="column">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" name="email" [(ngModel)]="email">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Password" name="password" [(ngModel)]="password">
+  </mat-form-field>
+  <button mat-button mat-raised-button (click)="login()">Login</button>
+</form>

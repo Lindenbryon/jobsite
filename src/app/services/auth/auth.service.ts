@@ -16,35 +16,52 @@ export interface User {
 })
 
 export class AuthService {
-user: any;
-authState;
-uid: any;
-registering: any;
-email: string;
+    public user: Observable<firebase.User>;
+    public dbUser: Observable<any>;
+    private userDetails: User = null;
+    
+    uid: any;
+    email: any;
+    registering: Boolean = false;
+    
   constructor(private fireAuth: AngularFireAuth, private fireStore: AngularFirestore) 
   {
-      // this.authState = fireAuth.authState;
-      // this.authState.subscribe((response) => {
-      //     console.log("response", response);
-      //    if(response !== null){
-      //        this.email = response.email;
-      //        this.uid = response.uid;
-      //        this.fireStore.collection('users').doc(response.uid).snapshotChanges().subscribe((user) => {
-      //            this.user = <User>user.payload.data();
-      //        });
-      //    }else {
-      //        //remove user
-      //    }
-      // });
-      
+      this.user = fireAuth.authState;
+      this.user.subscribe((user) => {
+        if(user)
+        {
+            this.dbUser = this.fireStore.collection('users').doc(user.uid).snapshotChanges();
+            this.dbUser.subscribe((user) => {
+                this.userDetails = <User>user.payload.data();
+            });
+        }
+        else
+        {
+            this.userDetails = null;
+        }
+      });
   }
+  
+  get loggedIn() {
+  if (this.userDetails == null ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  
+  get currentUser() 
+  {
+      return this.userDetails;
+  }
+  
   register(email: string, password: string){
       return new Promise((resolve, reject) => {
          this.fireAuth.auth.createUserAndRetrieveDataWithEmailAndPassword(email, password).then((userCredentials) =>{
              console.log(userCredentials);
              this.uid = userCredentials.user.uid;
              this.email = userCredentials.user.email;
-             this.fireAuth.auth.signOut();
+             // this.fireAuth.auth.signOut();
          }); 
       });
   }
@@ -59,21 +76,42 @@ email: string;
           user.lastname = lastname;
           user.address = address;
           user.dob = dob;
-          this.user = user;
-          
-          console.log(this.uid);            
+                    
           //Publish to firebase
-          let users = this.fireStore.collection<User>('users');
-          users.doc(this.uid).set(user);
+          let userRef = this.fireStore.collection<User>('users');
+          userRef.doc(this.uid).set(user);
           resolve();
       });
   }
+  login(email: string, password: string)
+  {
+      return new Promise((resolve, reject) => {
+          this.fireAuth.auth.signInWithEmailAndPassword(email, password).then((userObj) => {
+              // this.user = userObj;
+              let doc = this.fireStore.collection<User>('users').doc(userObj.user.uid);
+              doc.ref.get().then((document) => {
+                  let data = document.data();
+                  this.uid = userObj.user.uid;
+                  let user = {} as User;
+                  user.email = data.email;
+                  user.firstname = data.firstname;
+                  user.lastname = data.lastname;
+                  
+                  resolve(this.user);
+              });
+          }).catch((error) => {
+              reject(error);
+          });
+      })
+  }
   logout()
   {
-      this.fireAuth.auth.signOut().then(function() {
-          // Sign-out successful.
-      }).catch(function(error) {
-          // An error happened.
+      return new Promise((resolve, reject) => {
+          this.fireAuth.auth.signOut().then(function(signOutObject) {
+              resolve();
+          }).catch(function(error) {
+              reject(error);
+          });
       });
   }
 }

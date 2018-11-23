@@ -1,10 +1,12 @@
-<div>
+<div fxLayout="column">
     <mat-toolbar color="primary" fxLayout="row">
         <a href="#" routerLink="/home">Application</a>
         <span fxFlex></span>
-        <div class="navigation">
+        <div class="navigation" fxLayout="row" fxLayoutAlign="end center">
+            <p *ngIf="user !== null">User: {{ user.firstname }} {{ user.lastname }}</p>
             <a href="#" routerLink="/login">Login</a>
             <a href="#" routerLink="/register">Register</a>
+            <a href="#" (click)="logout()">Logout</a>
         </div>
     </mat-toolbar>
     <router-outlet></router-outlet>

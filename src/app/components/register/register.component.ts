@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MAT_STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
-import {Router} from "@angular/router"
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
