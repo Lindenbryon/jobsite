@@ -14,6 +14,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { JobCategoryComponent } from './components/job-category/job-category.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { environment } from '../environments/environment';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    JobCategoryComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
