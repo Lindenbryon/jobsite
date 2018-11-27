@@ -6,24 +6,22 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class RoleGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) 
   {
       
   }
+  
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      
       return new Promise((resolve) => {
-          this.authService.user.subscribe((user) => {
-              if (user && user.uid) {
+          this.authService.observe.subscribe((userDetails) => {
+              if (userDetails.payload.data().userType === "admin") {
                   resolve(true);
               }
               else
               {
-                  // navigate to login page
                   this.router.navigate(['/login']);
-                  // you can save redirect url so after authing we can move them back to the page they requested
                   resolve(false);
               }
           });

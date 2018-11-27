@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-
+import { mergeMap } from 'rxjs/operators';
 export interface User { 
     email: string;
     firstname: string;
@@ -10,36 +10,29 @@ export interface User {
     address: string;
     dob: string;
 }
-
 @Injectable({
   providedIn: 'root'
 })
-
 export class AuthService {
     public user: Observable<firebase.User>;
     public dbUser: Observable<any>;
-    private userDetails: User = null;
+    public userDetails: User = null;
     
     uid: any;
     email: any;
     registering: Boolean = false;
+    public observe: Observable<any>;
     
   constructor(private fireAuth: AngularFireAuth, private fireStore: AngularFirestore) 
   {
       this.user = fireAuth.authState;
-      this.user.subscribe((user) => {
-        if(user)
-        {
-            this.dbUser = this.fireStore.collection('users').doc(user.uid).snapshotChanges();
-            this.dbUser.subscribe((user) => {
-                this.userDetails = <User>user.payload.data();
-            });
-        }
-        else
-        {
-            this.userDetails = null;
-        }
-      });
+      this.observe = this.user.pipe(mergeMap((user) => {
+          if(user && user.uid)
+          {
+              return this.fireStore.collection('users').doc(user.uid).snapshotChanges();
+          }
+          return [];
+      }));
   }
   
   get loggedIn() {
@@ -54,7 +47,7 @@ export class AuthService {
   {
       return this.userDetails;
   }
-  get userType(){
+  userType(){
       return this.userDetails;
   }
   
@@ -118,3 +111,4 @@ export class AuthService {
       });
   }
 }
+

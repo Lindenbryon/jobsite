@@ -16,6 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { JobCategoryComponent } from './components/job-category/job-category.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 
@@ -26,7 +27,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     LoginComponent,
     RegisterComponent,
     JobCategoryComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

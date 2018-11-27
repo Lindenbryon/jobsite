@@ -12,14 +12,14 @@ export class AppComponent {
   user: any = null;
     constructor(private authService: AuthService, private router: Router)
     {
-        this.authService.user.subscribe((user) => {
-            if(user !== null)
-            {
-                this.authService.dbUser.subscribe(() => {
-                    this.user = this.authService.currentUser;
-                });
-            }
-        });
+        // this.authService.user.subscribe((user) => {
+        //     if(user !== null)
+        //     {
+        //         this.authService.dbUser.subscribe(() => {
+        //             this.user = this.authService.currentUser;
+        //         });
+        //     }
+        // });
     }
     logout(){
         this.authService.logout().then(() => {
