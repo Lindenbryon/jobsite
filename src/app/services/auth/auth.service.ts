@@ -54,6 +54,9 @@ export class AuthService {
   {
       return this.userDetails;
   }
+  get userType(){
+      return this.userDetails;
+  }
   
   register(email: string, password: string){
       return new Promise((resolve, reject) => {
