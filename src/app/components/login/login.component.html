@@ -5,5 +5,7 @@
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Password" name="password" [(ngModel)]="password">
   </mat-form-field>
+  <p *ngIf="loginMessage">{{ loginMessage }}</p>
+  <a routerLink="/reset-password" href="">forgot password?</a>
   <button mat-button mat-raised-button (click)="login()">Login</button>
 </form>

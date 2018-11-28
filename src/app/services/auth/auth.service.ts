@@ -110,5 +110,14 @@ export class AuthService {
           });
       });
   }
+  resetPassword(email: string)
+  {
+      return new Promise((resolve, reject) => {
+         this.fireAuth.auth.sendPasswordResetEmail(email).then(function(resetObject){
+             resolve();
+         }).catch(function(error){
+             reject(error);
+         });
+     })
 }
-
+}

@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { JobCategoryComponent } from './components/job-category/job-category.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 
@@ -28,7 +29,8 @@ import { AdminComponent } from './components/admin/admin.component';
     RegisterComponent,
     JobCategoryComponent,
     PageNotFoundComponent,
-    AdminComponent
+    AdminComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
