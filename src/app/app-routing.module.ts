@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AddJobComponent } from './components/add-job/add-job.component';
 
 const routes: Routes = [
     {
@@ -34,6 +35,11 @@ const routes: Routes = [
     {
         path: 'admin',
         component: AdminComponent,
+        canActivate: [AuthGuard, RoleGuard]
+    },
+    {
+        path: 'add-job',
+        component: AddJobComponent,
         canActivate: [AuthGuard, RoleGuard]
     }
 ];

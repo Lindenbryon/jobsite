@@ -1,0 +1,5 @@
+admin -
+Add jobs 
+edit jobs 
+delete jobs 
+see listed jobs (new page) 

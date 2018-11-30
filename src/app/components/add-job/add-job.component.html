@@ -1,0 +1,19 @@
+<h4>Create Job</h4>
+<form class="example-form" fxLayout="column">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Title" name="title" [(ngModel)]="title">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Job Type" name="job_type" [(ngModel)]="job_type">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="location" name="location" [(ngModel)]="location">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="salary" name="salary" [(ngModel)]="salary">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input type="textarea" rows="8" matInput placeholder="content" name="content" [(ngModel)]="content">
+  </mat-form-field>
+  <button mat-button mat-raised-button>Create</button>
+</form>

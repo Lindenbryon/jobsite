@@ -18,6 +18,8 @@ import { JobCategoryComponent } from './components/job-category/job-category.com
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AddJobComponent } from './components/add-job/add-job.component';
+import { EditJobComponent } from './components/edit-job/edit-job.component';
 
 
 
@@ -30,7 +32,9 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     JobCategoryComponent,
     PageNotFoundComponent,
     AdminComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    AddJobComponent,
+    EditJobComponent
   ],
   imports: [
     BrowserModule,
