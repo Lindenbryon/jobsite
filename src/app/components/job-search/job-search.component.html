@@ -1,0 +1,11 @@
+<mat-card>
+    <form class="search-form">
+      <mat-form-field fxFlex="2 2 calc(10em + 10px)">
+        <input matInput placeholder="Job Title" name="job_title" [(ngModel)]="job_title">
+      </mat-form-field>
+      <mat-form-field fxFlex="2 2 calc(10em + 10px)">
+        <input matInput placeholder="Location" name="location" [(ngModel)]="location">
+      </mat-form-field>
+      <button mat-button mat-raised-button (click)="search()">Search</button>
+    </form>
+</mat-card>

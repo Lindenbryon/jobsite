@@ -7,7 +7,10 @@ import { fadeAnimation } from '../../animation';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [fadeAnimation]
+  animations: [fadeAnimation],
+  host: {
+      class: 'router-body'
+  }
 })
 export class AppComponent {
   title = 'jobs';
@@ -19,7 +22,7 @@ export class AppComponent {
             {
                 this.authService.observe.subscribe((observe) => {
                     this.user = observe.payload.data();
-                    
+
                 });
             }
         });

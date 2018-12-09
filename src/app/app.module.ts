@@ -20,6 +20,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AddJobComponent } from './components/add-job/add-job.component';
 import { EditJobComponent } from './components/edit-job/edit-job.component';
+import { JobSearchComponent } from './components/job-search/job-search.component';
 
 
 
@@ -34,7 +35,8 @@ import { EditJobComponent } from './components/edit-job/edit-job.component';
     AdminComponent,
     ForgotPasswordComponent,
     AddJobComponent,
-    EditJobComponent
+    EditJobComponent,
+    JobSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +44,8 @@ import { EditJobComponent } from './components/edit-job/edit-job.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, 
-    AngularFireAuthModule, 
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     AngularFireStorageModule,
     JobsMaterialModule,
     FormsModule,

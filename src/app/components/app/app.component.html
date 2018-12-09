@@ -11,6 +11,6 @@
         </div>
     </mat-toolbar>
     <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
-        <router-outlet #o="outlet"></router-outlet>
+        <router-outlet #o="outlet" class="router-body"></router-outlet>
     </main>
 </div>

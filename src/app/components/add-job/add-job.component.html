@@ -1,19 +1,19 @@
 <h4>Create Job</h4>
-<form class="example-form" fxLayout="column">
+<form class="example-form" fxLayout="column" [formGroup]="addJob">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Title" name="title" [(ngModel)]="title">
+    <input matInput placeholder="Title" formControlName="title" required>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Job Type" name="job_type" [(ngModel)]="job_type">
+    <input matInput placeholder="Job Type" formControlName="job_type" required>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="location" name="location" [(ngModel)]="location">
+    <input matInput placeholder="location" formControlName="location" required>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="salary" name="salary" [(ngModel)]="salary">
+    <input matInput placeholder="salary" formControlName="salary" required>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input type="textarea" rows="8" matInput placeholder="content" name="content" [(ngModel)]="content">
+    <input type="textarea" rows="8" matInput placeholder="content" formControlName="content" required>
   </mat-form-field>
-  <button mat-button mat-raised-button>Create</button>
+  <button mat-button mat-raised-button (click)="postNewJob()">Create</button>
 </form>
