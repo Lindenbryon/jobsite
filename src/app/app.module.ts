@@ -21,6 +21,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { AddJobComponent } from './components/add-job/add-job.component';
 import { EditJobComponent } from './components/edit-job/edit-job.component';
 import { JobSearchComponent } from './components/job-search/job-search.component';
+import { AdminJobComponent } from './components/admin-job/admin-job.component';
 
 
 
@@ -36,7 +37,8 @@ import { JobSearchComponent } from './components/job-search/job-search.component
     ForgotPasswordComponent,
     AddJobComponent,
     EditJobComponent,
-    JobSearchComponent
+    JobSearchComponent,
+    AdminJobComponent
   ],
   imports: [
     BrowserModule,

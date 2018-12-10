@@ -40,6 +40,7 @@ export class AddJobComponent implements OnInit {
       if(this.userId){
           this.jobsService.addJob(this.userId, title, job_type, location, salary, content).then((addedJob) => {
               //job saved 
+              console.log("job saved");
           }, (error) => {
               //return error to view
               console.error("FAILED");
