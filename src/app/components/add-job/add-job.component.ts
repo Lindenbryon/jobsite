@@ -14,7 +14,9 @@ export class AddJobComponent implements OnInit {
     userId = null;
   constructor(private router: Router, private fb: FormBuilder, private auth: AuthService, private jobsService: JobsService)
   {
-
+      this.auth.user.subscribe((user) => {
+         this.userId = user.uid;
+      });
   }
 
   ngOnInit()
@@ -28,15 +30,21 @@ export class AddJobComponent implements OnInit {
       });
   }
   postNewJob(){
-      this.auth.user.subscribe((user) => {
-         this.userId = user.uid;
-      });
+      
       let title = this.addJob.controls.title.value;
       let job_type = this.addJob.controls.job_type.value;
       let location = this.addJob.controls.location.value;
       let salary = this.addJob.controls.salary.value;
       let content = this.addJob.controls.title.value;
-      this.jobsService.addJob(this.userId, title, job_type, location, salary, content);
+      
+      if(this.userId){
+          this.jobsService.addJob(this.userId, title, job_type, location, salary, content).then((addedJob) => {
+              //job saved 
+          }, (error) => {
+              //return error to view
+              console.error("FAILED");
+          });  
+      }
       
   }
 
