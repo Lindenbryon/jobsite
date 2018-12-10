@@ -18,10 +18,22 @@ export class JobsService {
   jobSearch(){
 
   }
+  
   getJobs(){
       return this.fireStore.collection("jobs").snapshotChanges();
   }
-  addjob(){
-      
+  
+  addJob(userId : string, title: string, job_type: string, location:string, salary: string, content: string){
+      return new Promise((resolve, reject) => {
+          this.fireStore.collection('jobs').add({
+              content: content,
+              date_added: '',
+              location: location,
+              salary: salary,
+              type: '',
+              user_ud: userId
+          });
+          resolve(); 
+      });
   }
 }

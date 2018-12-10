@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router"
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AuthService } from '../../services/auth/auth.service';
+import { JobsService } from '../../services/jobs/jobs.service';
 
 @Component({
   selector: 'app-add-job',
@@ -10,7 +11,8 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class AddJobComponent implements OnInit {
     addJob: FormGroup;
-  constructor(private router: Router, private fb: FormBuilder, private auth: AuthService)
+    userId = null;
+  constructor(private router: Router, private fb: FormBuilder, private auth: AuthService, private jobsService: JobsService)
   {
 
   }
@@ -26,12 +28,16 @@ export class AddJobComponent implements OnInit {
       });
   }
   postNewJob(){
-      console.log(this.auth);
+      this.auth.user.subscribe((user) => {
+         this.userId = user.uid;
+      });
       let title = this.addJob.controls.title.value;
       let job_type = this.addJob.controls.job_type.value;
       let location = this.addJob.controls.location.value;
       let salary = this.addJob.controls.salary.value;
       let content = this.addJob.controls.title.value;
+      this.jobsService.addJob(this.userId, title, job_type, location, salary, content);
+      
   }
 
 }

@@ -22,7 +22,6 @@ export class AppComponent {
             {
                 this.authService.observe.subscribe((observe) => {
                     this.user = observe.payload.data();
-
                 });
             }
         });
