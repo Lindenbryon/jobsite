@@ -32,11 +32,12 @@ export class JobsService {
   addJob(userId : string, title: string, job_type: string, location:string, salary: string, content: string){
       return new Promise((resolve, reject) => {
           this.fireStore.collection('jobs').add({
+              title: title,
               content: content,
               date_added: '',
               location: location,
               salary: salary,
-              type: '',
+              type: job_type,
               user_id: userId
           }).then(() => {
               resolve();

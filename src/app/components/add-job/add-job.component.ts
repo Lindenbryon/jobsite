@@ -35,7 +35,7 @@ export class AddJobComponent implements OnInit {
       let job_type = this.addJob.controls.job_type.value;
       let location = this.addJob.controls.location.value;
       let salary = this.addJob.controls.salary.value;
-      let content = this.addJob.controls.title.value;
+      let content = this.addJob.controls.content.value;
       
       if(this.userId){
           this.jobsService.addJob(this.userId, title, job_type, location, salary, content).then((addedJob) => {
