@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AddJobComponent } from './components/add-job/add-job.component';
+import { AjobComponent } from './components/ajob/ajob.component';
 
 const routes: Routes = [
     {
@@ -40,6 +41,11 @@ const routes: Routes = [
     {
         path: 'add-job',
         component: AddJobComponent,
+        canActivate: [AuthGuard, RoleGuard]
+    },
+    {
+        path: 'admin/job/:id',
+        component: AjobComponent,
         canActivate: [AuthGuard, RoleGuard]
     }
 ];

@@ -22,6 +22,7 @@ import { AddJobComponent } from './components/add-job/add-job.component';
 import { EditJobComponent } from './components/edit-job/edit-job.component';
 import { JobSearchComponent } from './components/job-search/job-search.component';
 import { AdminJobComponent } from './components/admin-job/admin-job.component';
+import { AjobComponent } from './components/ajob/ajob.component';
 
 
 
@@ -38,7 +39,8 @@ import { AdminJobComponent } from './components/admin-job/admin-job.component';
     AddJobComponent,
     EditJobComponent,
     JobSearchComponent,
-    AdminJobComponent
+    AdminJobComponent,
+    AjobComponent
   ],
   imports: [
     BrowserModule,

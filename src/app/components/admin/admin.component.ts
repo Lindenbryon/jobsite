@@ -4,13 +4,14 @@ import { AuthService } from '../../services/auth/auth.service';
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-admin',
+  selector: 'admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
     userId = null;
-  constructor(private auth: AuthService, private jobService: JobsService) 
+    adminJobs = null;
+  constructor(private auth: AuthService, private jobService: JobsService, private router: Router) 
   {
       this.auth.user.subscribe((user) => {
          this.userId = user.uid;
@@ -19,7 +20,12 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() 
   {
-      
+      this.jobService.getAdminUserJobs(this.userId).subscribe((jobs) =>{
+         this.adminJobs = jobs;
+      });
+  }
+  edit(){
+      //this.router.navigate([''])
   }
 
 }

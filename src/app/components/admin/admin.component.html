@@ -2,4 +2,4 @@
   admin works!
 </p>
 <button mat-button mat-raised-button routerLink="/add-job">Add New Job</button>
-<admin-job></admin-job>
+<admin-job *ngFor="let job of adminJobs" [adminJobs]="job"></admin-job>

@@ -22,8 +22,11 @@ export class JobsService {
   getJobs(){
       return this.fireStore.collection("jobs").snapshotChanges();
   }
-  getJobsByUser(id: string){
+  getAdminUserJobs(id: string){
       return this.fireStore.collection("jobs", ref => ref.where("user_id", "==", id)).snapshotChanges();
+  }
+  getAdminJobsByDoc(id: string){
+      return this.fireStore.collection("jobs").doc(id).snapshotChanges();
   }
   
   addJob(userId : string, title: string, job_type: string, location:string, salary: string, content: string){
@@ -34,7 +37,7 @@ export class JobsService {
               location: location,
               salary: salary,
               type: '',
-              user_ud: userId
+              user_id: userId
           }).then(() => {
               resolve();
           }).catch(() => {
