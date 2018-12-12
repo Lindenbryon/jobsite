@@ -11,6 +11,7 @@ export class AdminJobComponent implements OnInit {
     @Input() adminJobs : any;
     jobData: any;
     docId: string;
+    title: string;
     content : string;
     dateAdded : any;
     location: string;
@@ -27,6 +28,7 @@ export class AdminJobComponent implements OnInit {
   {
       this.docId = this.adminJobs.payload.doc.id;
       this.jobData = this.adminJobs.payload.doc.data();
+      this.title = this.jobData.title;
       this.content = this.jobData.content;
       this.dateAdded = '';
       this.location = this.jobData.location;

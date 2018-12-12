@@ -13,23 +13,23 @@
 <div *ngIf="editMode">
     <mat-card>
         <h4>Edit Mode</h4>
-        <form [formGroup]="editJobForm">
-            <mat-form-field>
+        <form [formGroup]="editJobForm" class="example-form">
+            <mat-form-field class="example-full-width">
               <input matInput placeholder="title" formControlName="title" type="text" required>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field class="example-full-width">
               <textarea matInput placeholder="Content" formControlName="content" required></textarea>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field class="example-full-width">
               <input matInput placeholder="Date added" formControlName="dateAdded" type="text" required>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field class="example-full-width">
               <input matInput placeholder="Location" formControlName="location" type="text" required>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field class="example-full-width">
               <input matInput placeholder="Salary" formControlName="salary" type="text" required>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field class="example-full-width">
                 <input matInput placeholder="Job Type" formControlName="jobType" type="text" required>
             </mat-form-field>
             <div class="">
