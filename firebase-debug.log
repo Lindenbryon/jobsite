@@ -1,0 +1,691 @@
+[debug] [2018-12-14T17:03:13.588Z] ----------------------------------------------------------------------
+[debug] [2018-12-14T17:03:13.591Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\linden.RUSHCLIFFOFFICE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2018-12-14T17:03:13.592Z] CLI Version:   6.1.2
+[debug] [2018-12-14T17:03:13.592Z] Platform:      win32
+[debug] [2018-12-14T17:03:13.592Z] Node Version:  v10.13.0
+[debug] [2018-12-14T17:03:13.593Z] Time:          Fri Dec 14 2018 17:03:13 GMT+0000 (Greenwich Mean Time)
+[debug] [2018-12-14T17:03:13.593Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-12-14T17:03:13.607Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-14T17:03:13.607Z] > authorizing via signed-in user
+[debug] [2018-12-14T17:03:13.607Z] [iam] checking project jobsite-c02bd for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2018-12-14T17:03:13.609Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/jobsite-c02bd:testIamPermissions  
+
+[debug] [2018-12-14T17:03:14.382Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'jobsite-c02bd'...
+[info] 
+[info] i  deploying storage, firestore, functions
+[debug] [2018-12-14T17:03:17.031Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/jobsite-c02bd  
+ 
+[debug] [2018-12-14T17:03:17.926Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-12-14T17:03:17.933Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/jobsite-c02bd:test  
+
+[debug] [2018-12-14T17:03:18.683Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-12-14T17:03:18.693Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/jobsite-c02bd:test  
+
+[debug] [2018-12-14T17:03:19.401Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-12-14T17:03:19.408Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.1.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-12-14T17:03:19.412Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/jobsite-c02bd?view=CONSUMER_VIEW  
+ 
+[debug] [2018-12-14T17:03:19.414Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/jobsite-c02bd?view=CONSUMER_VIEW  
+ 
+[debug] [2018-12-14T17:03:20.574Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:03:20.637Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-12-14T17:03:20.641Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/jobsite-c02bd  
+ 
+[debug] [2018-12-14T17:03:20.818Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:03:20.819Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/508475858985:getServerAppConfig  
+ 
+[debug] [2018-12-14T17:03:21.060Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-12-14T17:03:21.064Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/jobsite-c02bd/rulesets  
+
+[debug] [2018-12-14T17:03:21.978Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:03:21.978Z] [rules] created ruleset projects/jobsite-c02bd/rulesets/9a1555c8-0fd2-4862-8ac2-47625c6b1ff4
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2018-12-14T17:03:21.980Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/jobsite-c02bd/rulesets  
+
+[debug] [2018-12-14T17:03:21.981Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta1/projects/jobsite-c02bd/databases/(default)/indexes  
+ 
+[debug] [2018-12-14T17:03:22.267Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:03:22.890Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:03:22.890Z] [rules] created ruleset projects/jobsite-c02bd/rulesets/fce5636a-415c-4705-88e3-e816bccb73cc
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-12-14T17:03:22.898Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/jobsite-c02bd/configs  
+ 
+[debug] [2018-12-14T17:03:23.774Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (41.41 KB) for uploading
+[debug] [2018-12-14T17:03:24.010Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/jobsite-c02bd/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2018-12-14T17:04:03.651Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:03.653Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-dc3a3b8d-f25d-4147-998a-d27eb94164de/bcf2a0d0-9e8a-40da-86ae-c7a369df4238.zip?GoogleAccessId=service-508475858985@gcf-admin-robot.iam.gserviceaccount.com&Expires=1544808843&Signature=biLeVoki3CTzXxS8bt%2Fbo3%2Bg47UgnDwnNSyoiDDsa%2BSrspX42crpQNyb%2BF6bBHnvr1SfPeH7Fwl1FIvKHMkIjXkglKxguUdAAUocBF7%2FFXzG4tgrJFmfTEx04534U0%2B4nvsxWE23ymH9DoXxEqaHZnrmTNG%2Bod0hB9KsJ2KuUGe%2FdZlgluYyJYxHWcMhrrSbf%2FDUf%2Blt5%2BL1qwGQL%2B2vy8Yfw31G6QguPWxOos6RTtPqW%2B74q3CAirr5ygGDb18GczysGY33jC3uJBzJxc0Oak0qBAEYR%2FQR8akmkg2dWa%2FQ%2FMQrC0SdxPUbREYUDTV20xMSrx%2BKVHvhTmL5Bot9LA%3D%3D  
+
+[debug] [2018-12-14T17:04:04.251Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[debug] [2018-12-14T17:04:04.256Z] [rules] releasing firebase.storage/jobsite-c02bd.appspot.com with ruleset projects/jobsite-c02bd/rulesets/9a1555c8-0fd2-4862-8ac2-47625c6b1ff4
+[debug] [2018-12-14T17:04:04.257Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/jobsite-c02bd/releases/firebase.storage/jobsite-c02bd.appspot.com  
+
+[debug] [2018-12-14T17:04:05.149Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:05.150Z] [rules] updated release projects/jobsite-c02bd/releases/firebase.storage/jobsite-c02bd.appspot.com
+[info] +  storage: released rules storage.rules to firebase.storage/jobsite-c02bd.appspot.com
+[debug] [2018-12-14T17:04:05.153Z] [rules] releasing cloud.firestore with ruleset projects/jobsite-c02bd/rulesets/fce5636a-415c-4705-88e3-e816bccb73cc
+[debug] [2018-12-14T17:04:05.154Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/jobsite-c02bd/releases/cloud.firestore  
+
+[debug] [2018-12-14T17:04:05.483Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:05.484Z] [rules] updated release projects/jobsite-c02bd/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore
+[debug] [2018-12-14T17:04:05.489Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/jobsite-c02bd/locations/-/functions  
+ 
+[debug] [2018-12-14T17:04:06.062Z] <<< HTTP RESPONSE 200
+[info] i  functions: creating Node.js 6 function query(us-central1)...
+[debug] [2018-12-14T17:04:06.068Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2018-12-14T17:04:06.073Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/jobsite-c02bd/locations/us-central1/functions  
+
+[debug] [2018-12-14T17:04:06.581Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:06.585Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/jobsite-c02bd/locations/-/functions  
+ 
+[debug] [2018-12-14T17:04:07.128Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:07.129Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:07.374Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:09.378Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:09.614Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:11.616Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:11.851Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:13.854Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:14.099Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:16.101Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:16.500Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:18.501Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:18.744Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:20.746Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:20.980Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:22.982Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:23.186Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:25.187Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:25.385Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:27.386Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:27.598Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:29.599Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:29.810Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:31.811Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:32.020Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:34.025Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:34.253Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:36.254Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:36.447Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:38.449Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:38.628Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:40.629Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:40.818Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:42.820Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:43.020Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:45.021Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:45.218Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:47.219Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:47.413Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:49.416Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:49.634Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:51.635Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:51.865Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:53.866Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:54.062Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:56.063Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:56.257Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:04:58.258Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:04:58.468Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:00.470Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:00.716Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:02.717Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:02.902Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:04.902Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:05.126Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:07.127Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:07.343Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:09.367Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:09.574Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:11.575Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:11.763Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:13.763Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:13.949Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:15.950Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:16.139Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:18.139Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:18.330Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:20.330Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:20.522Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:22.524Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:22.714Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:24.715Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:24.893Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:26.893Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:27.122Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:29.123Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:29.337Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:31.338Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:31.539Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:33.540Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:33.770Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:35.772Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:35.963Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:37.964Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:38.159Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:40.160Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:40.379Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:42.379Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:42.573Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:44.574Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:44.770Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:46.771Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:46.956Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:48.957Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:49.134Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:51.135Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:51.354Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:53.354Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:53.544Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:55.545Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:55.754Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:57.756Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:05:57.932Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:05:59.933Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:00.159Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:02.160Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:02.356Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:04.357Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:04.550Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:06.550Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:06.747Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:08.748Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:08.961Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:10.962Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:11.145Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:13.144Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:13.326Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:15.327Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:15.545Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:17.549Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:17.752Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:19.752Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:20.018Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:22.020Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:22.225Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:24.227Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:24.432Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:26.433Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:26.619Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:28.622Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:28.805Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:30.808Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:31.022Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:33.023Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:33.254Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:35.254Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:35.442Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:37.443Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:37.633Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:39.635Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:39.820Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:41.820Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:42.018Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:44.018Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:44.209Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:46.210Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:46.398Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:48.400Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:48.584Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:50.585Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:50.775Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:52.776Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:52.977Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:54.977Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:55.169Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:57.170Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:57.374Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:06:59.376Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:06:59.558Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:01.560Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:01.749Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:03.750Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:03.948Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:05.949Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:06.143Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:08.144Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:08.335Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:10.335Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:10.520Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:12.521Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:12.715Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:14.717Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:14.904Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:16.906Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:17.094Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:19.095Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:19.295Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:21.296Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:21.510Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:23.510Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:23.710Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:25.711Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:25.915Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:27.916Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:28.096Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:30.097Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:30.295Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:32.296Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:32.484Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:34.484Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:34.666Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:36.667Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:36.858Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:38.859Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:39.051Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:41.053Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:41.238Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:43.239Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:43.431Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:45.434Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:45.622Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:47.623Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:47.806Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:49.807Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:49.991Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:51.993Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:52.177Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:54.179Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:54.365Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:56.366Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:56.549Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:07:58.549Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:07:58.733Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:00.734Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:00.934Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:02.936Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:03.119Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:05.121Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:05.306Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:07.307Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:07.496Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:09.498Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:09.700Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:11.700Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:11.873Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:13.874Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:14.077Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:16.078Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:16.265Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:18.267Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:18.458Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:20.459Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:20.652Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:22.653Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:22.848Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:24.850Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:25.032Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:27.032Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:27.236Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:29.237Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:29.432Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:31.433Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:31.619Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:33.621Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:33.799Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:35.800Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:35.994Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:37.995Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:38.179Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:40.181Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:40.368Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:42.368Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:42.567Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:44.569Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:44.770Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:46.772Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:46.979Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:48.980Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:49.182Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:51.183Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:51.371Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:53.372Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:53.558Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:55.560Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:55.752Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:57.752Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:08:57.941Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:08:59.941Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:00.143Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:02.143Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:02.321Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:04.323Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:04.498Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:06.499Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:06.682Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:08.684Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:08.867Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:10.869Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:11.055Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:13.057Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:13.238Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:15.240Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:15.427Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:17.427Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:17.622Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:19.624Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:19.818Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:21.819Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:22.008Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:24.009Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:24.197Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:26.198Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:26.391Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:28.392Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:28.611Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:30.612Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:30.796Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:32.797Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:32.993Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:34.994Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:35.206Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:37.207Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:37.406Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:39.406Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:39.595Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:41.596Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:41.790Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:43.791Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:43.985Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:45.986Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:46.184Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:48.185Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:48.371Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:50.373Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:50.562Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:52.563Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:52.754Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:54.755Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:54.948Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:56.949Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:57.140Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:09:59.141Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:09:59.338Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:01.340Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:01.545Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:03.547Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:03.748Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:05.749Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:05.945Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:07.945Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:08.148Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:10.151Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:10.342Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:12.343Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:12.583Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:14.584Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:14.769Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:16.770Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:16.949Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:18.950Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:19.145Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:21.146Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:21.342Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:23.344Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:23.536Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:25.537Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:25.738Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:27.739Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:27.963Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:29.964Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:30.150Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:32.153Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:32.356Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:34.357Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:34.540Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:36.540Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:36.742Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:38.742Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:38.951Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:40.952Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:41.154Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:43.154Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:43.355Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:45.356Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:45.563Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:47.564Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:47.753Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:49.753Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:49.943Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:51.945Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:52.135Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:54.137Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:54.332Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:56.334Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:56.540Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:10:58.540Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:10:58.746Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:11:00.747Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:11:00.944Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:11:02.944Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:11:03.141Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:11:05.142Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:11:05.324Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:11:07.324Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:11:07.505Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:11:09.506Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:11:09.692Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-14T17:11:11.694Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/am9ic2l0ZS1jMDJiZC91cy1jZW50cmFsMS9xdWVyeS9rU0d2RDZIZGFETQ  
+ 
+[debug] [2018-12-14T17:11:11.885Z] <<< HTTP RESPONSE 200

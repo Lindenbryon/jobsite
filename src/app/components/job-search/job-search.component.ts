@@ -23,9 +23,7 @@ export class JobSearchComponent implements OnInit {
   }
   search(){
       return this.jobService.getJobs().subscribe((data) => {
-          data.forEach(function(child){
-             this.jobs = child.payload.doc.data();
-          });
+          //elastic search
       });
   }
 

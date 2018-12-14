@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
 
 
 @Injectable({
@@ -12,10 +10,6 @@ export class JobsService {
 
   constructor(private fireAuth: AngularFireAuth, private fireStore: AngularFirestore)
   {
-
-  }
-
-  jobSearch(){
 
   }
   
@@ -45,5 +39,21 @@ export class JobsService {
               reject();
           }); 
       });
+  }
+  editJob(id: string, title: string, content: string, dateAdded: string, location:string, salary: string, jobType: string){
+        return new Promise((resolve, reject) => {
+            this.fireStore.collection('jobs').doc(id).update({
+                content: content,
+                date_added: content,
+                location: location,
+                salary: salary,
+                title: title,
+                job_type: jobType
+            }).then(() =>{
+                resolve();
+            }).catch((error) => {
+               reject();
+            });
+        });
   }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JobsService } from '../../services/jobs/jobs.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-ajob',
@@ -18,8 +17,7 @@ export class AjobComponent implements OnInit {
     jobType: string;
     job: any;
     editMode = false;
-    editJobForm: FormGroup;
-  constructor(private router: Router, private route: ActivatedRoute, private jobsService: JobsService, private formBuilder: FormBuilder) 
+  constructor(private router: Router, private route: ActivatedRoute, private jobsService: JobsService)
   {
       
   }
@@ -50,7 +48,16 @@ export class AjobComponent implements OnInit {
       }
   }
   editJob(){
-      
+      this.jobsService.editJob(
+          this.id,
+          this.title,
+          this.content,
+          this.dateAdded,
+          this.location,
+          this.salary,
+          this.jobType
+      ).then((dataReturn) => {
+          this.router.navigate(['/admin']);
+      });
   }
-
 }
