@@ -27,18 +27,22 @@ export class AjobComponent implements OnInit {
       this.route.paramMap.subscribe(params => {
          this.id = params.get('id');
          this.jobsService.getAdminJobsByDoc(this.id).subscribe((job) => {
-             this.job = job.payload.data();
-             this.title = this.job.title;
-             this.content = this.job.content;
-             this.dateAdded = this.job.date_added;
-             this.location = this.job.location;
-             this.salary = this.job.salary;
-             this.jobType = this.job.type;
+             if(this.job){
+                 this.job = job.payload.data();
+                 this.title = this.job.title;
+                 this.content = this.job.content;
+                 this.dateAdded = this.job.date_added;
+                 this.location = this.job.location;
+                 this.salary = this.job.salary;
+                 this.jobType = this.job.type;
+             }
          });    
       });
   }
   backToAdmin(){
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/admin']).then(()  =>{
+
+      });
   }
   toggleEditMode(){
       if(this.editMode === false){
@@ -56,8 +60,17 @@ export class AjobComponent implements OnInit {
           this.location,
           this.salary,
           this.jobType
-      ).then((dataReturn) => {
-          this.router.navigate(['/admin']);
+      ).then(() => {
+          this.router.navigate(['/admin']).then(() => {
+
+          });
       });
+  }
+  deleteJob(){
+    if(confirm('Are you sure you want to delete this job?')){
+        this.jobsService.deleteJob(this.id).then(() =>{
+            this.router.navigate(['/admin']);
+        });
+    }
   }
 }

@@ -22,7 +22,6 @@ export class AdminComponent implements OnInit {
   {
       this.jobService.getAdminUserJobs(this.userId).subscribe((jobs) =>{
          this.adminJobs = jobs;
-         console.log(jobs);
       });
   }
 }

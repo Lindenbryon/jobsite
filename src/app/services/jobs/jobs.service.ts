@@ -56,4 +56,13 @@ export class JobsService {
             });
         });
   }
+  deleteJob(id: string){
+      return new Promise((resolve, reject) => {
+          this.fireStore.collection('jobs').doc(id).delete().then(function(){
+              resolve();
+          }).catch(() => {
+              reject();
+          });
+      })
+  }
 }

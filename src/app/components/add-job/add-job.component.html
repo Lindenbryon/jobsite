@@ -1,19 +1,22 @@
 <h4>Create Job</h4>
-<form class="example-form" fxLayout="column" [formGroup]="addJob">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Title" formControlName="title" required>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Job Type" formControlName="job_type" required>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="location" formControlName="location" required>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="salary" formControlName="salary" required>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input type="textarea" rows="8" matInput placeholder="content" formControlName="content" required>
-  </mat-form-field>
-  <button mat-button mat-raised-button (click)="postNewJob()">Create</button>
-</form>
+<button (click)="backToAdmin()">Back</button>
+<mat-card>
+    <form class="example-form" fxLayout="column" [formGroup]="addJob">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Title" formControlName="title" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Job Type" formControlName="job_type" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="location" formControlName="location" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="salary" formControlName="salary" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input type="textarea" rows="8" matInput placeholder="content" formControlName="content" required>
+        </mat-form-field>
+        <button mat-button mat-raised-button (click)="postNewJob()">Create</button>
+    </form>
+</mat-card>
